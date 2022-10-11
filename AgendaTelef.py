@@ -18,4 +18,4 @@ telef=input("Dime su teléfono: ")
 vNombre.append(nombre)
 vTelefonos.append(telef)
 
-print ("El nombre es",nombre"y su teléfono es",telef)
+print ("El teléfono de",vNombre.pop(),"es",vTelefonos.pop())

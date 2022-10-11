@@ -29,3 +29,12 @@ edad=int(edad_Como_Texto)
 print(edad/5)
 print(len("Juan"))
 edad2=int(input("Dime tu edad: "))
+
+
+
+##Bucle while
+x=0
+while(7<x):
+    print("Explicación")
+    x=x+1
+
