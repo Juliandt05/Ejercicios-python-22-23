@@ -30,5 +30,8 @@ while opc!=5:
     print("4- Ver todos los contactos")
     print("5- Salir")
     print ("#########################")
-    opc=int(input())
+    try:
+        opc=int(input())
+    except:
+        print("Las opciones son de la 1 a la 5")
    
