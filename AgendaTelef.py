@@ -12,10 +12,23 @@ Ejemplo [Juan - Teléfono, Pepe - Teléfono]
 vNombre=[]
 vTelefonos=[]
 
-nombre=input("Dime un nombre: ")
-telef=input("Dime su teléfono: ")
+'''
+1- Insertar contacto
+2- Borrar contacto
+3- Buscar contacto
+4- Ver todos los contactos
+5- Salir
+'''
 
-vNombre.append(nombre)
-vTelefonos.append(telef)
 
-print ("El teléfono de",vNombre.pop(),"es",vTelefonos.pop())
+opc=0
+while opc!=5:
+    print("###### MENÚ AGENDA #######")
+    print("1- Insertar contacto")
+    print("2- Borrar contacto")
+    print("3- Buscar contacto")
+    print("4- Ver todos los contactos")
+    print("5- Salir")
+    print ("#########################")
+    opc=int(input())
+   
