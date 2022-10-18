@@ -38,3 +38,9 @@ while(7<x):
     print("Explicación")
     x=x+1
 
+## Funciones definidas por el usuario
+
+def imprimirHola():
+    print("Hola Juan")
+
+imprimirHola()
