@@ -3,12 +3,10 @@ from pytube import Playlist
 from tkinter import *
 from tkinter import ttk
 def descargarCancion(url:str):
-    youtube= YouTube(url)
-    print(youtube.author)
-    print("Descargando", youtube.title)
-    cancion= youtube.streams.get_audio_only()
-    cancion.download
-
+    url=datos_entrada.get()
+    youtube=YouTube(url)
+    cancion=youtube.streams.get_audio_only()
+    cancion.download()
 def descargarlista (url:str):
     playlist= Playlist(url)
     for cancion in  playlist.videos:
