@@ -41,3 +41,4 @@ def pintaMenu():
 pintaMenu()
 
    
+#Muy bien Julian, bien hecho, como bien te indique yo, tu maestro y querido profesor Julio. Un saludos y un besito. Saludos desde Corea del Norte.
