@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter import messagebox
 
 vLista=[]
 vContra=[]
@@ -17,6 +18,7 @@ def guardarDatos():
         entry_nombre_usuario.delete(0,len(usuario))
         entry_pass_usuario.delete(0,len(contraseña))
         entry_repitepass_usuario.delete(0,len(confirmcon))
+        messagebox.showinfo("Usuario Guardado",f"Usuario ")
     print(vLista)
 
 def imprimirDatos():

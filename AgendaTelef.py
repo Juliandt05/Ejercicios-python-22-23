@@ -32,12 +32,13 @@ def pintaMenu():
         print("5- Salir")
         print ("#########################")
         try:
-            opc=int(input())
+            opc=int("Dime el número",input())
         except:
             print("Las opciones son de la 1 a la 5")
     return opc
 
+opc=pintaMenu()
+while(opc!=5):
+    opc=pintaMenu()
 
-pintaMenu()
 
-   

@@ -7,7 +7,8 @@ while contador<=10:
 
 
 #Bucle for
-#
+# Lista [1,2,3,4,5,6,7,8,9,10]
+vNombres=["Ángel","Maria","Pepe","Jose"]
 
-for num in range(1,10):
+for num in vNombres:
     print(num)
