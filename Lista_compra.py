@@ -1,3 +1,5 @@
+#Nombre cliente
+#Numero de productos
 import flet as ft
 
 
@@ -6,7 +8,7 @@ import flet as ft
 
 def main(page: ft.Page):
     
-    page.title="Flet inicio"
+    page.title="Lista de la compra"
     def cambiarcolor(e):
         t.value=textField_Nombre.value
         page.update()
@@ -18,7 +20,7 @@ def main(page: ft.Page):
 
     page.add(t) # add hace dos cosas 1-Añadir 2-Actualizar
 
-    t.value="cambiado los datos"
+    t.value="Lista de alimentos"
     page.update()
     #page update actualiza los datos
     #componente boton
@@ -34,6 +36,10 @@ def main(page: ft.Page):
 
     slider_edad=ft.Slider(min=0,max=120,divisions=120,label="Edad:{value}")
     page.add(slider_edad)
+
+    #Crear fila
+    fila=ft.Row(controls=[textField_Nombre,dropDown_Menu])
+    page.add(fila)
 
 
 
