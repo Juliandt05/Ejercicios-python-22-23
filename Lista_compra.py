@@ -16,9 +16,13 @@ def main(page: ft.Page):
         vlista.append(slider_carne.value)
         vlista.append(dropDown_Menu2.value)
         vlista.append(slider_verdura.value)
+        vlista.append(dropDown_Menu3.value)
+
     
-        t.value=vlista
+        textField_Datos.value=vlista
+        print(vlista)
         page.update()
+
        
  
 
@@ -31,10 +35,12 @@ def main(page: ft.Page):
     page.update()
     #page update actualiza los datos
     #componente boton
-    bt=ft.FloatingActionButton(icon=ft.icons.ADD,on_click=añadirelemento)
-    page.add(bt)
+    page.add(
+        ft.FilledButton(text="Filled button")
+    )
     textField_Nombre=ft.TextField(label="Nombre",hint_text="Escribe tu nombre")
     textField_Apellido=ft.TextField(label="Apellido",hint_text="Escribe tu apellido")
+    
     #page.add(textField_Nombre)
 
     dropDown_Menu= ft.Dropdown(width=300,options=[ft.dropdown.Option("Ternera")],label="Carnes")
@@ -46,18 +52,23 @@ def main(page: ft.Page):
     dropDown_Menu2.options.append(ft.dropdown.Option("Brocoli"))
     dropDown_Menu2.options.append(ft.dropdown.Option("Zanahorias"))
     slider_verdura=ft.Slider(min=0,max=2000,divisions=2000,label="Gramos:{value} g")
-    
 
+    dropDown_Menu3= ft.Dropdown(width=300,options=[ft.dropdown.Option("Huevos")],label="Otros")
+    dropDown_Menu3.options.append(ft.dropdown.Option("Leche"))
+    dropDown_Menu3.options.append(ft.dropdown.Option("Agua"))
 
-
-    
-    
-
-    #Crear fila
-    fila=ft.Row(controls=[textField_Nombre,dropDown_Menu,dropDown_Menu2])
+    fila=ft.Row(controls=[textField_Nombre,dropDown_Menu,dropDown_Menu2,dropDown_Menu3])
     page.add(fila)
     fila2=ft.Row(controls=[textField_Apellido,slider_carne,slider_verdura])
     page.add(fila2)
+
+
+    textField_Datos=ft.TextField(label="Datos",hint_text="Aqui aparecerán sus datos")
+    page.add(textField_Datos)
+    
+
+    #Crear fila
+    
 
 
 
