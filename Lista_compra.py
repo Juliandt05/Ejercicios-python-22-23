@@ -8,7 +8,7 @@ vlista=[]
 
 def main(page: ft.Page):
     
-    page.title="Lista de la compra"
+    page.title="Frutería"
     def añadirelemento(e):
         vlista.append(textField_Nombre.value)
         vlista.append (textField_Apellido.value)
@@ -21,11 +21,20 @@ def main(page: ft.Page):
     
         textField_Datos.value=vlista
         print(vlista)
+        textField_Nombre.value=""
+        textField_Apellido.value=""
+        dropDown_Menu.value=""
+        dropDown_Menu2.value=""
+        dropDown_Menu3.value=""
+        slider_carne.value=0
+        slider_verdura.value=0
+
         page.update()
-
-       
- 
-
+    
+    
+    img=ft.Image(src="https://frutasmontijo.com/wp-content/uploads/2018/10/fruterias.jpg",width=200,height=200)
+    page.add(img)
+    
     #Componente tetxo
     t=ft.Text(value="Introducción a flet",color="light blue",size=20)
 
@@ -35,46 +44,42 @@ def main(page: ft.Page):
     page.update()
     #page update actualiza los datos
     #componente boton
-    page.add(
-        ft.FilledButton(text="Filled button")
-    )
+    
     textField_Nombre=ft.TextField(label="Nombre",hint_text="Escribe tu nombre")
     textField_Apellido=ft.TextField(label="Apellido",hint_text="Escribe tu apellido")
+    fila=ft.Row(controls=[textField_Nombre,textField_Apellido])
+    page.add(fila)
     
     #page.add(textField_Nombre)
 
     dropDown_Menu= ft.Dropdown(width=300,options=[ft.dropdown.Option("Ternera")],label="Carnes")
-    dropDown_Menu.options.append(ft.dropdown.Option("Cerdo"))
+    dropDown_Menu.options.append(ft.dropdown.Option("Cerdo 2€/g"))
     dropDown_Menu.options.append(ft.dropdown.Option("Pollo"))
+    page.add(dropDown_Menu)
     slider_carne=ft.Slider(min=0,max=2000,divisions=2000,label="Gramos:{value} g")
+    page.add(slider_carne)
 
     dropDown_Menu2= ft.Dropdown(width=300,options=[ft.dropdown.Option("Lechuga")],label="Verdura")
     dropDown_Menu2.options.append(ft.dropdown.Option("Brocoli"))
     dropDown_Menu2.options.append(ft.dropdown.Option("Zanahorias"))
+    page.add(dropDown_Menu2)
     slider_verdura=ft.Slider(min=0,max=2000,divisions=2000,label="Gramos:{value} g")
+    page.add(slider_verdura)
 
     dropDown_Menu3= ft.Dropdown(width=300,options=[ft.dropdown.Option("Huevos")],label="Otros")
     dropDown_Menu3.options.append(ft.dropdown.Option("Leche"))
     dropDown_Menu3.options.append(ft.dropdown.Option("Agua"))
+    page.add(dropDown_Menu3)
 
-    fila=ft.Row(controls=[textField_Nombre,dropDown_Menu,dropDown_Menu2,dropDown_Menu3])
-    page.add(fila)
-    fila2=ft.Row(controls=[textField_Apellido,slider_carne,slider_verdura])
-    page.add(fila2)
+    
 
-
-    textField_Datos=ft.TextField(label="Datos",hint_text="Aqui aparecerán sus datos")
+    textField_Datos=ft.Text("Aqui apareceran los datos")
     page.add(textField_Datos)
     
-
-    #Crear fila
+    bt=ft.ElevatedButton(text="Confirmar compra",on_click=añadirelemento)
+    page.add(bt)
     
-
-
-
-
-
-
-
+    
+    
 
 ft.app(target=main)
