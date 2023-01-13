@@ -42,3 +42,17 @@ while(opc!=5):
     opc=pintaMenu()
 
 
+import flet as ft
+
+def main(page: ft.Page):
+    page.title = "DropdownMenu Equipos"
+    page.vertical_alignment = ft.MainAxisAlignment.CENTER
+
+    Dropdown_Equipos=ft.Dropdown(width=300,options=[ft.dropdown.Option("Rayo Fuentealvilla")],label="Equipos")
+    Dropdown_Equipos.options.append(ft.dropdown.Option("Depor"))
+    Dropdown_Equipos.options.append(ft.dropdown.Option("Leganés"))
+    Dropdown_Equipos.options.append(ft.dropdown.Option("Real Zaragoza"))
+    Dropdown_Equipos.options.append(ft.dropdown.Option("Borusia Mochenglasbach"))
+    page.add (Dropdown_Equipos)
+
+ft.app(target=main)
